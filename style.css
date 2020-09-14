@@ -1,0 +1,79 @@
+h1, h2, h3, p, a, pre, span {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+    font-family: Georgia, serif;
+    color: #333;
+}
+
+body div.navigation {
+    float: right;
+}
+
+body div.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+body div.navigation li {
+    display: inline;
+    padding: 0;
+    margin: 0 15px 0 0;
+    font-size: 1.1em;
+}
+
+body div.navigation ul li a {
+    color: #e2c876;
+}
+
+body div.navigation ul li:hover a {
+    color: #666;
+}
+
+body div.content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+body div.content h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+body div.content h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+body div.content p, body div.content a, body div.content span {
+    font-size: 1em;
+}
+
+body div.content h1, body div.content h2, body div.content h3, div.content p {
+    padding: 10px 0;
+}
+
+body div.content div.code {
+    margin: 10px 0;
+}
+
+body div.content div.code pre {
+    font-size: 11px;
+    font-family: Consolas, monospace;
+    color: #000;
+    background-color: #eee;
+    max-width: 600px;
+    padding: 5px 0;
+    margin-bottom: 3px;
+}
+
+body div.content div.code span.description {
+    font-style: italic;
+    font-size: 0.8em;
+}
