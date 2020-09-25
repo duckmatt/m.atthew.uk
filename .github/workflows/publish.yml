@@ -16,9 +16,9 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Install fornax
-      run: dotnet tool install fornax
+      run: dotnet tool install fornax -g
     - name: Run Fornax
-      run: dotnet fornax build
+      run: fornax build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
