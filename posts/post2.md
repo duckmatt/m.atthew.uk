@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Some other post title
-author: @k_cieslak
 published: 2020-02-20
 ---
 # Something else
