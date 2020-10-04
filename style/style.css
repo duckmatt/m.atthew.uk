@@ -1,5 +1,5 @@
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "PT Serif", serif;
   color: #222;
 }
 
@@ -35,4 +35,22 @@ nav a {
 
 nav .navbar-item {
   margin-left: 1.5%;
+}
+
+.article-title {
+  float: left;
+  display: block;
+}
+
+.article-subtitle {
+  float: right;
+  display: block;
+  font-style: italic;
+  color: #555;
+  padding-top: 2.5%;
+  font-size: 0.9em;
+}
+
+.article-body {
+  clear: both;
 }

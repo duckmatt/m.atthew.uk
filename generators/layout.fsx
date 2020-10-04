@@ -12,7 +12,7 @@ let layout (ctx : SiteContents) active bodyCnt =
     let siteInfo = ctx.TryGetValue<Globalloader.SiteInfo> ()
     let ttl =
       siteInfo
-      |> Option.map (fun si -> si.title)
+      |> Option.map (fun si -> si.title + " - " + active)
       |> Option.defaultValue ""
 
     let menuEntries =
@@ -28,6 +28,7 @@ let layout (ctx : SiteContents) active bodyCnt =
             meta [Name "viewport"; Content "width=device-width, initial-scale=1"]
             title [] [!! ttl]
             link [Rel "icon"; Type "image/png"; Sizes "32x32"; Href "/images/favicon.png"]
+            link [Rel "stylesheet"; Href "https://fonts.googleapis.com/css?family=PT+Serif"]
             link [Rel "stylesheet"; Type "text/css"; Href "/style/normalize.css"]
             link [Rel "stylesheet"; Type "text/css"; Href "/style/style.css"]
 
@@ -52,18 +53,18 @@ let published (post: Postloader.Post) =
     |> Option.defaultValue System.DateTime.Now
     |> fun n -> n.ToString("yyyy-MM-dd")
 
-let postLayout (useSummary: bool) (post: Postloader.Post) =
+let postLayout (isSummary: bool) (post: Postloader.Post) =
     div [Class "card article"] [
         div [Class "card-content"] [
             div [Class "media-content has-text-centered"] [
-                p [Class "title article-title"; ] [ a [Href post.link] [!! post.title]]
-                p [Class "subtitle is-6 article-subtitle"] [
+                h1 [Class "title article-title"; ] [ a [Href post.link] [!! post.title]]
+                span [Class "subtitle is-6 article-subtitle"] [
                   !! (sprintf "Published on %s" (published post))
                 ]
             ]
             div [Class "content article-body"] [
-                !! (if useSummary then post.summary else post.content)
-
+                !! (if isSummary then post.summary else post.content)
             ]
+            (if isSummary then a [Href post.link] [!! "Read more..."] else span [] [])
         ]
     ]
