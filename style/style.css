@@ -8,12 +8,6 @@ body {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 1260px) {
-  .container {
-    margin: 0 2%;
-  }
-}
-
 .container a {
   text-decoration: none;
   color: #B0912E;
@@ -53,4 +47,22 @@ nav .navbar-item {
 
 .article-body {
   clear: both;
+}
+
+@media only screen and (max-width: 1260px) {
+  .container {
+    margin: 0 2%;
+  }
+
+  .article-title {
+    float: none;
+    margin-bottom: 1%;
+  }
+
+  .article-subtitle {
+    float: none;
+    clear: left;
+    padding: 0 0 1% 0;
+    font-size: 0.9em;
+  }
 }
