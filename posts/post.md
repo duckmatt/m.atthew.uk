@@ -11,7 +11,7 @@ It's no secret and no surprise that Protobuf in Python is slower than its Java a
 The benchmarks list three variants for Python: "C++-generated-code", "C++-reflection", and "pure-Python". A little bit about these:
 * Pure Python is the Protobuf library implemented in Python alone, understandably not performant. 
 * C++ reflection is the Protobuf library but makes use of a Python extension which links to the C++ Protobuf library (`libprotobuf.so`), this gives a significant boost to performance over the Python library, orders of magnitude faster than the pure Python variant (roughly 10x). 
-* C++ generated code links to C++ libraries which have been generated from the proto, for serialisation this is orders of magnitude faster again (roughly 5x for serialisation and 2x for parsing).
+* C++ generated code links to C++ libraries which have been generated from the proto, for serialisation this is faster yet again but not to quite the same extent (roughly 5x for serialisation and 2x for parsing).
 
 ## So which of these variants do we get when we install protobuf via pip?
 
